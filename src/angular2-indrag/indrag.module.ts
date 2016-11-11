@@ -1,15 +1,23 @@
 import { NgModule }           from '@angular/core';
-import { CommonModule }       from '@angular/common';
-import { FormsModule }        from '@angular/forms';
-import { DraggableDirective }   from './draggable.directive';
-import { ContainerDirective }   from './container.directive';
-import { IndConfigService }     from './indconfig.service';
-import { IndActionsService }     from './indactions.service';
+
+import { DraggableDirective }   from './draggable/draggable.directive';
+import { ContainerDirective }   from './container/container.directive';
+import { ConfigService }     from './shared/config.service';
+import { ActionsService }     from './shared/actions.service';
 
 @NgModule({
-  imports:      [ CommonModule, FormsModule ],
-  declarations: [ DraggableDirective, ContainerDirective ],
-  exports:      [ DraggableDirective, ContainerDirective ],
-  providers:    [ IndConfigService, IndActionsService ]
+  imports:      [],
+  declarations: [
+    DraggableDirective,
+    ContainerDirective
+  ],
+  exports:      [
+    DraggableDirective,
+    ContainerDirective
+  ],
+  providers:    [
+    ConfigService,
+    ActionsService
+  ]
 })
 export class InDragModule { }
